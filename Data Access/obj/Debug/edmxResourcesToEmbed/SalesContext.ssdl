@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SalesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Surname" Type="varchar" MaxLength="100" />
+    <Property Name="DocNum" Type="varchar" MaxLength="200" />
+    <Property Name="BirthDate" Type="datetime" />
+    <Property Name="Age" Type="int" />
+    <Property Name="CreditCard" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Surname" Type="varchar" MaxLength="100" />
+    <Property Name="DocNum" Type="varchar" MaxLength="200" />
+    <Property Name="BirthDate" Type="datetime" />
+    <Property Name="FileNumber" Type="varchar" MaxLength="100" />
+    <Property Name="Age" Type="int" />
+  </EntityType>
+  <EntityType Name="InvoiceHeader">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="EmployeeId" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Total" Type="decimal" Precision="6" Scale="2" />
+  </EntityType>
+  <EntityType Name="InvoiceItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Subtotal" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="InvoiceId" Type="int" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" />
+    <Property Name="Brand" Type="varchar" MaxLength="200" />
+    <Property Name="ExpirationDate" Type="datetime" />
+    <Property Name="UnitPrice" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Supplier" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK__InvoiceHe__Custo__6C190EBB">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="InvoiceHeader" Type="Self.InvoiceHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InvoiceHeader">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__InvoiceHe__Emplo__6D0D32F4">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="InvoiceHeader" Type="Self.InvoiceHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InvoiceHeader">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__InvoiceIt__Invoi__6FE99F9F">
+    <End Role="InvoiceHeader" Type="Self.InvoiceHeader" Multiplicity="0..1" />
+    <End Role="InvoiceItems" Type="Self.InvoiceItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InvoiceHeader">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InvoiceItems">
+        <PropertyRef Name="InvoiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__InvoiceIt__Produ__70DDC3D8">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="InvoiceItems" Type="Self.InvoiceItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InvoiceItems">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SalesModelStoreContainer">
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoiceHeader" EntityType="Self.InvoiceHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoiceItems" EntityType="Self.InvoiceItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__InvoiceHe__Custo__6C190EBB" Association="Self.FK__InvoiceHe__Custo__6C190EBB">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="InvoiceHeader" EntitySet="InvoiceHeader" />
+    </AssociationSet>
+    <AssociationSet Name="FK__InvoiceHe__Emplo__6D0D32F4" Association="Self.FK__InvoiceHe__Emplo__6D0D32F4">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="InvoiceHeader" EntitySet="InvoiceHeader" />
+    </AssociationSet>
+    <AssociationSet Name="FK__InvoiceIt__Invoi__6FE99F9F" Association="Self.FK__InvoiceIt__Invoi__6FE99F9F">
+      <End Role="InvoiceHeader" EntitySet="InvoiceHeader" />
+      <End Role="InvoiceItems" EntitySet="InvoiceItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__InvoiceIt__Produ__70DDC3D8" Association="Self.FK__InvoiceIt__Produ__70DDC3D8">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="InvoiceItems" EntitySet="InvoiceItems" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

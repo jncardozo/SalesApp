@@ -1,0 +1,15 @@
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\bin\Debug\Domain.dll.config
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\bin\Debug\Domain.dll
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\bin\Debug\Domain.pdb
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\bin\Debug\EntityFramework.dll
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\bin\Debug\EntityFramework.xml
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\obj\Debug\Domain.dll
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\obj\Debug\Domain.pdb
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\bin\Debug\Data Access.dll
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\bin\Debug\Data Access.pdb
+C:\Users\Jose Nicolas\source\repos\SalesApp\Domain\bin\Debug\Data Access.dll.config

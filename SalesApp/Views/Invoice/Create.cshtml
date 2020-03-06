@@ -1,0 +1,103 @@
+﻿@model  Domain.Models.InvoiceHeader
+
+@{
+    ViewBag.Title = "Generar Venta";
+}
+
+<div class="content">
+    <div class="main-header clearfix">
+        <h2 class="f-left">Generación de Ventas </h2>
+    </div>
+    @using (Html.BeginForm())
+    {
+        <div class="main-content">
+            <div class="widget widget-table">
+                <div class="widget-header">
+                    <h3>Datos de Cabecera</h3>
+                </div>
+                <div class="widget-content">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="">
+                                    <strong>@Html.DisplayNameFor(model => model.Date)</strong>
+                                    <span class="control-label requerido">*</span>
+                                </label>
+                                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ej: 2020-03-05" } })
+                                @Html.ValidationMessageFor(model => model.Date)
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="wide">
+                                    <strong>Customer</strong>
+                                </label>
+                                <div id="filtro-asistido"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            @*<div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="">Detalle <i class="fa fa-plus-circle pull-right"></i><i class="fa fa-minus-circle pull-right"></i></a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse in" style="">
+                                <div class="panel-body">                                                                        
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for=""><strong>Lineas</strong></label>
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <div class="inline width48">
+                                                                <label for="" class="inline padd-10-right">@Html.DisplayNameFor(model => model.InvoiceItems)</label>
+                                                                @Html.EditorFor(model => invoiceItem.Quantity)
+                                                                @Html.ValidationMessageFor(model => invoiceItem.Quantity)
+                                                            </div>
+                                                            <div class="field-group-padd inline width48">
+                                                                <label for="" class="inline padd-10-right">@Html.DisplayNameFor(model => invoiceItem.Subtotal)</label>
+                                                                @Html.EditorFor(model => invoiceItem.Subtotal)
+                                                                @Html.ValidationMessageFor(model => invoiceItem.Subtotal)
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                    
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <br>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-plus-circle"></i> Create</button>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        (function () {
+            $("#filtro-asistido").tokenInput("@Url.Action("Customer", "Invoice")", {
+                hintText: "Input the customer name.",
+                noResultsText: "No results.",
+                searchingText: "Search...",
+                searchDelay: 50,
+                tokenLimit: 1,
+                tokenFormatter: function (item) {
+                    console.log(item);
+                    return '<li><p>' + item.name + ' ' + item.surname +'</p><input type="hidden" id="Prestador" value="' + item.id + '"></li>';
+                },
+            });
+        })();
+    </script>
+}
+

@@ -1,0 +1,18 @@
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\Application.dll.config
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\Application.dll
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\Application.pdb
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\Data Access.dll
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\Domain.dll
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\EntityFramework.dll
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\Data Access.pdb
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\Data Access.dll.config
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\Domain.pdb
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\Domain.dll.config
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\EntityFramework.xml
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\obj\Debug\Application.csprojAssemblyReference.cache
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\obj\Debug\Application.csproj.CoreCompileInputs.cache
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\obj\Debug\Application.csproj.CopyComplete
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\obj\Debug\Application.dll
+C:\Users\Jose Nicolas\source\repos\SalesApp\Application\obj\Debug\Application.pdb

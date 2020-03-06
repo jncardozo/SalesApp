@@ -1,0 +1,135 @@
+﻿@model  Domain.Models.InvoiceHeader
+
+@{
+    ViewBag.Title = "Sale Detail";
+}
+
+<div class="content">
+    <div class="main-header clearfix">
+        <h2 class="f-left">Sale Information </h2>
+    </div>    
+        <div class="main-content">
+            <div class="widget widget-table">                
+                <div class="widget-content">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">Header <i class="fa fa-plus-circle pull-right"></i><i class="fa fa-minus-circle pull-right"></i></a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" style="">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">@Html.DisplayNameFor(model => model.Date)</label>
+                                                <div class="col-md-8">
+                                                    <span class="marker inline control-label">@Html.DisplayFor(model => model.Date)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">@Html.DisplayNameFor(model => model.Customers.Name)</label>
+                                                <div class="col-md-8">
+                                                    <span class="marker inline control-label">@Html.DisplayFor(model => model.Customers.Name)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">@Html.DisplayNameFor(model => model.Employees.Name)</label>
+                                                <div class="col-md-8">
+                                                    <span class="marker inline control-label">@Html.DisplayFor(model => model.Employees.Name)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">@Html.DisplayNameFor(model => model.Employees.FileNumber)</label>
+                                                <div class="col-md-8">
+                                                    <span class="marker inline control-label">@Html.DisplayFor(model => model.Employees.FileNumber)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="">Detail <i class="fa fa-plus-circle pull-right"></i><i class="fa fa-minus-circle pull-right"></i></a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse in" style="">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    @foreach (var items in Model.InvoiceItems)
+                                                    {
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="col-md-4 control-label">@Html.DisplayNameFor(model => items.Products.Name)</label>
+                                                                <div class="col-md-8">
+                                                                    <span class="marker inline control-label">@Html.DisplayFor(model => items.Products.Name)</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="col-md-4 control-label">@Html.DisplayNameFor(model => items.Products.UnitPrice)</label>
+                                                                <div class="col-md-8">
+                                                                    <span class="marker inline control-label">@Html.DisplayFor(model => items.Products.UnitPrice)</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="col-md-4 control-label">@Html.DisplayNameFor(model => items.Quantity)</label>
+                                                                <div class="col-md-8">
+                                                                    <span class="marker inline control-label">@Html.DisplayFor(model => items.Quantity)</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="col-md-4 control-label">@Html.DisplayNameFor(model => items.Subtotal)</label>
+                                                                <div class="col-md-8">
+                                                                    <span class="marker inline control-label">@Html.DisplayFor(model => items.Subtotal)</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">@Html.DisplayNameFor(model => model.Total)</label>
+                                <div class="col-md-8">
+                                    <span class="marker inline control-label">@Html.DisplayFor(model => model.Total)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />    
+    <script>
+        (function () { window.print(); })();
+    </script>
+</div>
